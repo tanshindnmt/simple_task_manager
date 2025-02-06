@@ -1,11 +1,11 @@
 require "test_helper"
 
-include Devise::Test::IntegrationHelpers  # Add this at the top if it's not there
-
-
 class TasksControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
+
   setup do
-    @user = users(:one) # Ensure there is a test user fixture
+    @user = users(:user_one) # Ensure there is a test user fixture
     sign_in @user       # Sign in the user before each test
     @task = tasks(:one) # Ensure there is a test task fixture
   end
