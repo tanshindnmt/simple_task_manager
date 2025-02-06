@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: "Test Task"
+  description: "This is a test task"
+  due_date: <%= 2.days.from_now %>
+  completed: false
+  user: user_one
+
+two:
+  title: "Another Task"
+  description: "Another task for testing"
+  due_date: <%= 3.days.from_now %>
+  completed: false
+  user: user_one
+
