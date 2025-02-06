@@ -2,6 +2,8 @@ require "application_system_test_case"
 
 class TasksTest < ApplicationSystemTestCase
   setup do
+    @user = users(:user_one)  # Ensure there is a test user
+    sign_in @user
     @task = tasks(:one)
   end
 
@@ -12,7 +14,8 @@ class TasksTest < ApplicationSystemTestCase
 
   test "should create task" do
     visit tasks_url
-    click_on "New task"
+
+    click_on "New task", match: :first
 
     check "Completed" if @task.completed
     fill_in "Description", with: @task.description
